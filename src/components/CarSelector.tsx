@@ -14,14 +14,20 @@ function CarSelector({ onChange }: Props) {
 	if (error) return <p>ERROR</p>
 
 	const { Results }: any = carMakes
+	const sortedResults = carMakes?.Results.sort((a, b) =>
+		a.MakeName.localeCompare(b.MakeName)
+	)
+	console.log(sortedResults)
 
 	return (
 		<Selector onChange={onChange} label="-- SELECT A MAKE --">
-			{Results.map(({ MakeId, MakeName }: CarMakeType) => (
-				<option className="bg-slate-900" key={MakeId} value={MakeId}>
-					{MakeName}
-				</option>
-			))}
+			{sortedResults!
+				.map(({ MakeId, MakeName }: CarMakeType) => (
+					<option className="bg-slate-900" key={MakeId} value={MakeId}>
+						{MakeName}
+					</option>
+				))
+				.sort()}
 		</Selector>
 	)
 }
