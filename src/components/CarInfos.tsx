@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import GridContainer from "../GridContainer"
+import GridContainer from "./GridContainer"
 import GridItem from "./GridItem"
 import { useCarInfos } from "../hooks/useCarInfos"
 import Spinner from "./Spinner"

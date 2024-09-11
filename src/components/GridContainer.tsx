@@ -1,5 +1,6 @@
 import { motion, useScroll, useSpring } from "framer-motion"
 import { useRef } from "react"
+import GridHeading from "./GridHeading"
 
 type Props = {
 	children: React.ReactNode
@@ -25,12 +26,7 @@ function GridContainer({ children }: Props) {
 				className="fixed top-0 bottom-0 right-0 w-4 bg-slate-400 z-50 origin-top rounded-b-xl "
 				style={{ scaleY }}
 			/>
-			<h2 className="sticky top-0 px-6 py-4 bg-slate-200 text-zinc-900">
-				Make Name
-			</h2>
-			<h2 className="sticky top-0 col-start-2 px-6 py-4 bg-slate-200 text-zinc-900">
-				Model Name
-			</h2>
+			<GridHeading />
 			{children}
 		</div>
 	)
