@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-	/* div::-webkit-scrollbar {
+	div::-webkit-scrollbar {
 		display: none;
-	} */
+	}
 }
