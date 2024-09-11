@@ -13,7 +13,6 @@ function CarSelector({ onChange }: Props) {
 	if (isFetching) return <SmSpinner />
 	if (error) return <p>ERROR</p>
 
-	const { Results }: any = carMakes
 	const sortedResults = carMakes?.Results.sort((a, b) =>
 		a.MakeName.localeCompare(b.MakeName)
 	)

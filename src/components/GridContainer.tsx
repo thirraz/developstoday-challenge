@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from "framer-motion"
+import { motion, useScroll } from "framer-motion"
 import { useRef } from "react"
 import GridHeading from "./GridHeading"
 
