@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import { fetchData } from "../lib/getCarMakes"
+import { getCarMakes } from "../lib/getCarMakes"
 import { CarMakeType } from "../types/APITypes"
 
 type CarMakesResponse = {
@@ -16,7 +16,7 @@ export function useCarMakes() {
 		data: carMakes
 	} = useQuery<CarMakesResponse>({
 		queryKey: ["car-makes"],
-		queryFn: () => fetchData()
+		queryFn: () => getCarMakes()
 	})
 
 	return { isFetching, error, carMakes }
