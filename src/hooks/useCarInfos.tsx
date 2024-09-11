@@ -12,9 +12,7 @@ export function useCarInfos(
 		data: carMakesAndModels
 	} = useQuery<CarInfosResponse>({
 		queryKey: ["cars-models-and-years"],
-		queryFn: () => getCarsModelsAndYears(makeId, year),
-		staleTime: 60000,
-		gcTime: 60000
+		queryFn: () => getCarsModelsAndYears(makeId, year)
 	})
 
 	return { isFetching, error, carMakesAndModels }

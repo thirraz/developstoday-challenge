@@ -16,9 +16,7 @@ export function useCarMakes() {
 		data: carMakes
 	} = useQuery<CarMakesResponse>({
 		queryKey: ["car-makes"],
-		queryFn: () => fetchData(),
-		staleTime: 60000,
-		gcTime: 60000
+		queryFn: () => fetchData()
 	})
 
 	return { isFetching, error, carMakes }
