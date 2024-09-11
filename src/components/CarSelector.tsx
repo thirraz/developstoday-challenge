@@ -1,27 +1,19 @@
-import { fetchData } from "../lib/getCarMakes"
 import Selector from "./Selector"
-import { useQuery } from "@tanstack/react-query"
 import SmSpinner from "./SmSpinner"
+import { useCarMakes } from "../hooks/useCarMakes"
+import { CarMakeType } from "../types/APITypes"
 
 type Props = {
 	onChange: any
 }
-type CarMakeType = { MakeId: string; MakeName: string }
 
 function CarSelector({ onChange }: Props) {
-	const {
-		isPending,
-		error,
-		data: carMakes
-	} = useQuery({
-		queryKey: ["car-makes"],
-		queryFn: () => fetchData()
-	})
+	const { carMakes, error, isFetching } = useCarMakes()
 
-	if (isPending) return <SmSpinner />
+	if (isFetching) return <SmSpinner />
 	if (error) return <p>ERROR</p>
 
-	const { Results } = carMakes
+	const { Results }: any = carMakes
 	return (
 		<Selector onChange={onChange} label="-- SELECT A MAKE --">
 			{Results.map(({ MakeId, MakeName }: CarMakeType) => (

@@ -22,8 +22,8 @@ function App() {
 			</div>
 
 			<Link
-				data-isOptionNull={isOptionsNull}
-				className="bg-white text-blue-950 font-bold px-7 py-2 rounded-lg hover:-translate-y-1 duration-200 data-[isOptionNull=true]:bg-gray-700 data-[isOptionNull=true]:border-slate-600 data-[isOptionNull=true]:text-zinc-400"
+				data-isnull={isOptionsNull}
+				className="bg-white text-blue-950 font-bold px-7 py-2 rounded-lg hover:-translate-y-1 duration-200 data-[isnull=true]:bg-gray-700 data-[isnull=true]:border-slate-600 data-[isnull=true]:text-zinc-400"
 				to={`/results/${carMake}/${year}`}
 				onClick={handleClick}
 			>

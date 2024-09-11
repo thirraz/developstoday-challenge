@@ -8,8 +8,6 @@ import Spinner from "./Spinner"
 type CarNameAndModel = { Make_Name: string; Model_Name: string }
 
 function CarInfos() {
-	// const [carData, setCarData] = useState([])
-	// const [isLoading, setIsLoading] = useState(false)
 	const { makeId, year } = useParams()
 
 	const {
